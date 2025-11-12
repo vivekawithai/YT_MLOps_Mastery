@@ -90,3 +90,6 @@ In Python, 'x' and 'y' are just strings — so a + b joins them as text.
 Python doesn’t have algebraic types built in, but we can create our own custom data types (like Symbol) to behave algebraically.
 
 '''
+#Module: OOPS/oops_proj.py
+from oops_proj import chatbook
+user1 = chatbook()

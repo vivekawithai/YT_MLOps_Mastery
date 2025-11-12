@@ -1,3 +1,5 @@
+# Sample project to understand basic OOPS concepts
+
 class chatbook:
     def __init__(self):
     # To define attributes and methods
@@ -20,9 +22,9 @@ class chatbook:
         elif user_input=='2':
             self.signin() 
         elif user_input=='3':
-            pass
+            self.mypost()
         elif user_input=='4':
-            pass
+            self.sendmessage()
         else:
             print("You have been logged out. Goodbye!")
             exit()
@@ -54,6 +56,25 @@ class chatbook:
                 print("Enter correct credentials. Please try again.")    
         print("\n")      
         self.menu()
+        
+    def mypost(self):
+        if self.loggedin == True:
+            post_content = input("Write your post here: ")
+            print("Your post has been published!")
+        else:
+            print("Please signin to write a post.")
+        print("\n")
+        self.menu()   
+        
+    def sendmessage(self):
+        if self.loggedin == True:
+            friend = input("Enter your friend's name to send message: ")
+            message = input("Type your message: ")
+            print(f"Message sent to {friend}!")
+        else:
+            print("Please signin to send messages.")
+        print("\n")
+        self.menu()   
             
 #create object/instance of the class            
-obj = chatbook()                 
+#user1 = chatbook()                 
