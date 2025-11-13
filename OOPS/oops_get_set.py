@@ -1,4 +1,4 @@
-# Sample project to understand basic OOPS concepts
+# Sample project to understand basic OOPS Getter Setter methods to access private attributes
 
 class chatbook:
     def __init__(self):
@@ -6,7 +6,14 @@ class chatbook:
         self.username=""
         self.password=""
         self.loggedin=False
-        self.menu() # Call menu method when an object is created
+        self.__name="Default User" #private attribute
+        #self.menu() # Call menu method when an object is created
+    
+    def get_name(self):
+        return self.__name #__name is private attribute and can be accessed here like this within class only.
+    
+    def set_name(self, value):
+        self.__name = value   
         
     def menu(self):
         #user_input = input("Welcome to  Chatbook ! How you would like to proceed? \n 1. Press 1 to Login \n 2. Signup \n 3. Press 3 to write a post"")    
@@ -77,4 +84,47 @@ class chatbook:
         self.menu()   
             
 #create object/instance of the class            
-user1 = chatbook()                 
+user1 = chatbook()      
+
+#Accessing private attribute using getter method
+print("Default name is:", user1.get_name())
+print(id(user1))
+
+#Setting new name using setter method
+user1.set_name("Agent Smith")
+
+#Accessing updated name using getter method
+print("Updated name is:", user1.get_name())
+print(id(user1))
+
+'''
+Notes on Getter and Setter Methods:
+
+id(user1)
+
+The id() function in Python returns the memory address (identity) of an object.
+
+This address remains the same as long as the object exists in memory.
+
+🧩 In your case
+
+✅ user1 is an object (instance of a class).
+✅ When you call set_name("Agent Smith"), you are modifying an attribute of that object, not creating a new object.
+
+So:
+
+Before setter → the object exists at memory address X
+
+After setter → the same object now has a modified internal attribute (still at memory address X)
+
+Conclusion:
+The object’s ID (memory address) stays the same,
+only its internal data (attributes) changes.
+
+⚙️ Analogy
+
+Think of user1 like a box —
+you can change what’s inside the box,
+but the box itself stays in the same place in memory.
+
+'''

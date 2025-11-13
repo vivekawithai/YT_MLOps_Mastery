@@ -3,25 +3,41 @@
 class Employee:
     #special method/magic method/dunder method -constructor
    
-    def __init__(self):
+    def __init__(self):  #Passing self object here john inside constructor
+        print(id(self))
         print("Started executing Employee class attibutes or data members")
+        #Obect here john is allowed to access attributes using self
         self.id = 101
         self.salary = 50000
         self.designation = "Developer"
         print("Completed executing Employee class attibutes or data members")
         
-    def travel(self,destination):
+    def travel(self,destination): #It is mandatory to pass self object as first parameter in method
         print("This travel funtion is called manually by object")
         print(f"Employee is travelling to {destination}")
     
+    def travel(self): #It is mandatory to pass self object as first parameter in method 
+        print("This travel funtion is called manually by object")
+        print(f"Employee is travelling to Delhi")   
+    
 #create object/instance of the class
-john = Employee()
+john = Employee() #john goes into Employee class as self parameter
+sam= Employee() #sam goes into Employee class as self parameter
+
+#different ids for different objects in RAM memory whenever Class is called.
+print(id(john))
+print(id(sam)) 
 #print(john.id,john.salary,john.designation)
 
-#accessing method using object
-john.travel("New York")
+john.name="John Admas"  #creating attribute outside the class using object
+print(john.name)
 
-print(type(john))
+
+#accessing method using object
+#john.travel("New York")
+#john.travel()
+
+#print(type(john))
     
 ''' Notes:
 👉Class: A blueprint that defines how objects are created and what data (attributes) and actions (methods) they have.

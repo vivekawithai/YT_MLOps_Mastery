@@ -1,4 +1,4 @@
-# Sample project to understand basic OOPS concepts
+# Sample project to understand basic OOPS Encapsulation concept
 
 class chatbook:
     def __init__(self):
@@ -6,7 +6,8 @@ class chatbook:
         self.username=""
         self.password=""
         self.loggedin=False
-        self.menu() # Call menu method when an object is created
+        self.__name="Default User" #private attribute
+        #self.menu() # Call menu method when an object is created
         
     def menu(self):
         #user_input = input("Welcome to  Chatbook ! How you would like to proceed? \n 1. Press 1 to Login \n 2. Signup \n 3. Press 3 to write a post"")    
@@ -78,3 +79,35 @@ class chatbook:
             
 #create object/instance of the class            
 user1 = chatbook()                 
+
+
+#Encapsulation
+#In Python encapsulation, that restricts direct access to an object's data and methods. 
+#It is implemented using access modifiers to define the visibility of class members (attributes and methods). Python uses naming conventions to indicate the intended level of access:
+
+#print(user1.name)
+#print(user1.__name)  #This will raise an AttributeError
+print(user1._chatbook__name)  #Accessing private attribute using name mangling
+
+'''Access Modifiers in Python
+ In Python, there are three levels of access control for class members:
+ 
+ 1. Public Members:
+    - No underscore prefix (e.g., name, age).
+    - Accessible from anywhere, both inside and outside the class.
+    2. Protected Members:
+    - Single underscore prefix (e.g., _name, _age).
+    - Intended for internal use within the class and its subclasses.
+    - Can be accessed from outside, but it's a convention to indicate "use with caution."
+    3. Private Members:
+    - Double underscore prefix (e.g., __name, __age).
+    - Name-mangled to prevent direct access from outside the class.
+    - Intended for use only within the class itself.'''
+    
+#Usually attributes are stored in memory as object.attribute
+#Eg:emp(id) --> Accessed as object_name.attribute 
+
+#But in case of Hidden/ Private attribute, it is stored in memory with _classname__attributename. 
+# Therefore, to access private attribute, we need to use name mangling.
+
+#Eg:emp(__name) --> Accessed as  object_name._class_name__private_attribute
