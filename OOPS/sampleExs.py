@@ -177,6 +177,17 @@ print("Updated name is:", user1.get_name())
 
 
 #Static Methods
+user1 = chatbook()
+print(user1.id)
+
+#Static method can be accessed using class name without creating object.
+chatbook.set_id(10) #Manually setting static variable value to 10
+
+user2 = chatbook()
+print(user2.id) #Output: 10
+user3 = chatbook()
+print(user3.id) #Output: 11 
+
 #Inheritance
 
 

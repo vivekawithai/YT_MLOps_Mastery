@@ -32,6 +32,9 @@ print(id(sam))
 john.name="John Admas"  #creating attribute outside the class using object
 print(john.name)
 
+john.managername="Alice Smith"
+print(john.managername)
+
 
 #accessing method using object
 #john.travel("New York")
